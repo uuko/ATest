@@ -36,7 +36,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         SearchManufactureModel repo = searchManufactureModelList.get(position);
-        holder.bind(searchManufactureModelList.get(position),listener);
+        holder.bind(searchManufactureModelList.get(position),listener,position);
     }
 
     @Override
@@ -52,18 +52,18 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
 
         private final SearchItemBinding binding;
 
-         ViewHolder( SearchItemBinding binding) {
+        ViewHolder( SearchItemBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
 
         }
 
-        void bind(SearchManufactureModel repo,OnItemClickListener listener) {
+        void bind(SearchManufactureModel repo,OnItemClickListener listener,int position) {
             binding.setData(repo);
             binding.getRoot().setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    listener.onItemClick(repo);
+                    listener.onItemClick(position,repo);
                 }
             });
             binding.executePendingBindings();

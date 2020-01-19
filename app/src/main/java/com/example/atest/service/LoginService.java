@@ -6,6 +6,7 @@ import com.example.atest.choose.ChooseModel;
 import com.example.atest.choose.ChoosenMoModel;
 import com.example.atest.login.LoginTokenModel;
 import com.example.atest.search.SearchManufactureModel;
+import com.example.atest.search_result.PrevManufactureModel;
 
 import java.util.List;
 
@@ -48,6 +49,10 @@ public interface LoginService {
             @Query("online_date") String online_date,
             @Query("sale_order") String sale_order,
             @Query("token") String token);
+    @GET("api/get-prev-manufacture")
+    Observable<List<PrevManufactureModel>> getPrevManufature(@Query("so_id") String so_id,
+                                                             @Query("item_id") String item_id,
+                                                             @Query("token") String token);
 
 //    @GET("api/auth/logout/{Token}")
 //    Call<LogoutModel> getLogout(@Query("token") String Token);

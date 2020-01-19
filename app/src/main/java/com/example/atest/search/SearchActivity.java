@@ -43,11 +43,12 @@ public class SearchActivity extends AppCompatActivity {
 
         searchAdapter=new SearchAdapter(list, new SearchScheduleResultContract.OnItemClickListener() {
             @Override
-            public void onItemClick(SearchManufactureModel item) {
-                Toast.makeText(SearchActivity.this, "test", Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(SearchActivity.this, SearchLoadActivity.class);
-                intent.putExtra(SEARCH_DATA,item.getMoId());
-                Log.d("item", "onItemClick: "+item.getMoId());
+            public void onItemClick(int position, SearchManufactureModel item) {
+                Intent intent=new Intent(SearchActivity.this,SearchLoadActivity.class);
+                intent.putExtra(SEARCH_DATA, item.getSoId());
+                intent.putExtra("itemid", item.getItemId());
+                Log.d("47", "onItemClick: "+item.getSoId());
+                startActivity(intent);
             }
         });
         searchBinding.recycleView.setLayoutManager(new LinearLayoutManager(this));

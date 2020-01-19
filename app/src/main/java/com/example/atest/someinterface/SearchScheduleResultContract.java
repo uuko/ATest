@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface SearchScheduleResultContract {
     public interface OnItemClickListener {
-        void onItemClick(SearchManufactureModel item);
+        void onItemClick(int position,SearchManufactureModel item);
     }
 }

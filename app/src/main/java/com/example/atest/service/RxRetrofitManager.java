@@ -31,7 +31,9 @@ public class RxRetrofitManager {
     }
 
     public LoginService RxgetLoginToken(){return loginService; }
-
+public LoginService RxgetPreData(){
+        return loginService;
+}
     public LoginService RxgetLoginData(){return loginService; }
 
     public LoginService RxgetCustomer(){return  loginService;}
