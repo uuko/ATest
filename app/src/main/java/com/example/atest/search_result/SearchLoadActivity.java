@@ -31,7 +31,7 @@ public class SearchLoadActivity extends AppCompatActivity {
         searchLoadViewModel.getPreInput(so_id,item_id);
 
 
-        Log.d("47", "onCreate: "+so_id);
+        Log.d("47", "onCreate: "+so_id+item_id);
         //  Toast.makeText(this, ""+ getIntent().getExtras().get(SEARCH_DATA), Toast.LENGTH_SHORT).show();
         listener=new TabLayout.OnTabSelectedListener() {
             @Override
